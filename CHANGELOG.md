@@ -3,6 +3,10 @@
 All notable changes are documented here. Format: [Keep a Changelog](https://keepachangelog.com), versioning: [SemVer](https://semver.org).
 
 ## [Unreleased]
+### Added
+- Skill `plan-tasks`: drafts `.claude/tasks.json` (tasks with title, description, acceptance criteria, kanban status, and issue number), runs an approve/adjust loop via AskUserQuestion, then creates one GitHub issue per task with `gh issue create --body-file`.
+- Command `/flow-plan`: plan-mode entry point for task drafting → GitHub issue creation → implementation plan.
+- SessionStart context nudge to use the plan-tasks skill (`/flow-plan`) when planning multi-step work.
 
 ## [0.1.0] - 2026-06-12
 ### Added

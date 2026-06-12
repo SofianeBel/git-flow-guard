@@ -1,0 +1,10 @@
+{
+  "name": "git-flow-guard",
+  "version": "0.1.0",
+  "description": "Claude Code plugin enforcing the Git-at-Scale workflow",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/guard-bash.test.mjs tests/guard-secrets.test.mjs"
+  },
+  "license": "MIT"
+}

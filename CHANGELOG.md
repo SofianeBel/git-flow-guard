@@ -4,6 +4,14 @@ All notable changes are documented here. Format: [Keep a Changelog](https://keep
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-06-13
+### Added
+- Skill `plan-tasks`: drafts `.claude/tasks.json` (tasks with title, description, acceptance criteria, kanban status, and issue number), runs an approve/adjust loop via AskUserQuestion, then creates one GitHub issue per task with `gh issue create --body-file`.
+- Command `/flow-plan`: plan-mode entry point for task drafting → GitHub issue creation → implementation plan.
+- SessionStart context nudge to use the plan-tasks skill (`/flow-plan`) when planning multi-step work.
+### Changed
+- README install instructions now use the GitHub marketplace slug (`SofianeBel/git-flow-guard`), with the local-clone path as a secondary option.
+
 ## [0.1.0] - 2026-06-12
 ### Added
 - SessionStart hook injecting repo workflow state (branches, docs, version source) into context.

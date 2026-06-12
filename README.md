@@ -22,8 +22,24 @@ In any git repo with a `main`/`dev` structure, the AI must:
 | `skills/git-flow` | The full operating procedure |
 | `skills/repo-bootstrap` | Ask-first creation of dev branch, docs, version source |
 | `skills/release` | SemVer computation + changelog management |
+| `skills/plan-tasks` | Draft `.claude/tasks.json` with approval loop → one GitHub issue per task |
+| `/flow-plan` | Plan mode: draft tasks.json (kanban + acceptance criteria) → approval loop → GitHub issues |
 | `/flow-status` | Read-only workflow health report |
 | `/flow-pr` | Finishing move: quality gate → docs → version bump → push → PR to dev → wait |
+
+## Planning & task tracking
+
+`/flow-plan` invokes the `plan-tasks` skill to structure multi-step work before any code is written.
+
+- **Task file** — `.claude/tasks.json` at the repo root (gitignored or checked in, your call).
+- **Schema** — array of task objects:
+  ```json
+  { "title": "…", "description": "…", "acceptanceCriteria": ["…"], "status": "todo", "issue": null }
+  ```
+  `status` follows a kanban lane: `todo` → `in-progress` → `in-review` → `done`.
+- **Approval loop** — Claude drafts the task list, then asks (AskUserQuestion) to approve or adjust before touching GitHub.
+- **Issue creation** — on approval, one `gh issue create --body-file` call per task; the returned issue number is written into the `issue` field.
+- **PR lifecycle** — each PR description includes `Closes #N`; merging the PR closes the issue and the task moves to `done`.
 
 ## Install
 

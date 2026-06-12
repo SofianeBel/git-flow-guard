@@ -21,6 +21,7 @@ const lines = [
   '- NEVER commit on main/master/dev. Always: git switch dev && git pull, then git switch -c feat/<scope> (or fix/, refactor/, chore/).',
   '- One logical step = one Conventional Commit (feat:, fix:, docs:, chore:, ...). Commit as you go.',
   '- When done: update CHANGELOG.md [Unreleased], bump the semver (feat=minor, fix=patch, breaking=major), push -u, open a PR to dev with gh pr create --base dev, then STOP and wait for human review. Never merge PRs yourself.',
+  '- When planning multi-step work, use the plan-tasks skill (/flow-plan) to draft tasks.json and create GitHub issues before implementing.',
   '',
   `Repo state: branch=${s.branch} | main=${s.hasMain ? 'yes' : 'NO'} | dev=${s.hasDev ? 'yes' : 'NO'} | version source=${s.versionSource ?? 'NONE'}`,
 ];

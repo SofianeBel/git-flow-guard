@@ -44,8 +44,15 @@ In any git repo with a `main`/`dev` structure, the AI must:
 ## Install
 
 ```bash
+claude plugin marketplace add SofianeBel/git-flow-guard
+claude plugin install git-flow-guard@git-flow-guard
+```
+
+Or from a local clone:
+
+```bash
 claude plugin marketplace add C:\path\to\git-flow-guard
-claude plugin install git-flow-guard
+claude plugin install git-flow-guard@git-flow-guard
 ```
 
 Requires Node.js (already required by Claude Code) and optionally `gh` for PR automation.

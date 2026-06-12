@@ -1,0 +1,17 @@
+{
+  "name": "git-flow-guard",
+  "description": "Git-at-Scale workflow enforcement for Claude Code",
+  "owner": {
+    "name": "sifly"
+  },
+  "plugins": [
+    {
+      "name": "git-flow-guard",
+      "source": "./",
+      "description": "Enforces branch-from-dev workflow, conventional commits, secret scanning, docs & semver upkeep, and PR-only merges with human review",
+      "version": "0.1.0",
+      "license": "MIT",
+      "category": "workflow"
+    }
+  ]
+}

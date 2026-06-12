@@ -1,0 +1,12 @@
+{
+  "name": "git-flow-guard",
+  "version": "0.1.0",
+  "description": "Enforces the Git-at-Scale workflow: branch from dev, conventional commits per step, secret scanning, doc & semver maintenance, PR to dev, then wait for human review",
+  "author": {
+    "name": "sifly"
+  },
+  "license": "MIT",
+  "keywords": ["git", "workflow", "branch-protection", "conventional-commits", "secrets", "semver"],
+  "skills": ["./skills/"],
+  "commands": ["./commands/"]
+}
